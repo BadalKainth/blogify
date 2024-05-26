@@ -14,11 +14,13 @@
     <div class="row row-cols-4">
       <% blogs.forEach(blog => { %>
       <div class="col mb-4">
-        <div class="card" style="width: 18rem;">
-          <img src="<%= blog.coverImageURL %>" class="card-img-top" alt="Cover Image">
+        <div class="w-72 h-60 border border-gray-300 p-2">
+          <div class="w-72 h-40 overflow-hidden whitespace-nowrap overflow-ellipsis">
+            <img src="<%= blog.coverImageURL %>" class="card-img-top object-cover" alt="Cover Image" style="width: 100%; height: 112px;">
+          </div>
           <div class="card-body">
-            <h5 class="card-title"><%= blog.title %></h5>
-            <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+            <h5 class="font-bold overflow-hidden whitespace-nowrap overflow-ellipsis" style="max-height: 3.2rem;"><%= blog.title %></h5>
+            <a href="/blog/<%= blog._id %>" class="btn btn-primary px-5 py-2">View</a>
           </div>
         </div>
       </div>
@@ -28,6 +30,5 @@
 
   <%- include('./partials/scripts') %>
 </body>
-
 
 </html>
