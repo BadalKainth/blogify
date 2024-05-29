@@ -13,7 +13,7 @@
   <div class="container mt-4">
     <h1><%= blog.title %></h1>
     <img src="<%= blog.coverImageURL %>" width="700px">
-    <p><%= blog.body %></p>
+    <p style="white-space: pre-line;"><%= blog.body %></p>
   </div>
 
   <div class="container mt-4">
@@ -34,7 +34,7 @@
       <% comments.forEach(comment => { %>
       <div>
         <img src="<%= blog.createdBy.profileImageURL %>" width="50px" /> <%= 
-            blog.createdBy.fullName %>:
+            comment.createdBy.fullName %>:
         <pre><%= comment.content %></pre>
       </div>
       <% }) %>
